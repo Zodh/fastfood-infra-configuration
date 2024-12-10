@@ -1,2 +1,7 @@
 # fastfood-infra-configuration
-Repository to Configure Fastfood APIs Infrastructure
+
+## Subir terraform Infra
+
+Esse projeto cria os recursos de VPC, Subnets, Secrets, Rotas e EKS.
+
+Para subir basta rodar os comandos: `terraform init` e `terraform apply`.
