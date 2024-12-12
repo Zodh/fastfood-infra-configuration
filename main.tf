@@ -165,3 +165,8 @@ resource "aws_eks_node_group" "eks_node_group" {
   instance_types = ["t3.medium"]
   ami_type = "AL2_x86_64"
 }
+
+# Cria recurso API Gateway
+resource "aws_api_gateway_rest_api" "eks_api" {
+  name = "EKS_API_Gateway"
+}
