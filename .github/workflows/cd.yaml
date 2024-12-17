@@ -11,14 +11,20 @@ jobs:
 
     steps:
       # 1. Checkout do código
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+
+      - name: "Configuring AWS credentials"
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{ secrets.REGION }}
 
       # 2. Configurar o Terraform CLI
       - name: Configurando o Terraform CLI
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 5.78
+        uses: hashicorp/setup-terraform@v3
 
       # 3. Iniciando o Terraform
       - name: Iniciando o Terraform
