@@ -2,8 +2,7 @@ name: CD - Deploy Terraform Changes
 
 on:
   push:
-    branches:
-      - main # Dispara o pipeline quando um merge for feito na branch main
+    branches: [ "main" ]
 
 jobs:
   terraform-apply:
