@@ -1,9 +1,8 @@
 name: CI - Validate and Plan Terraform
 
 on:
-  pull_request:
-    branches:
-      - main
+  push:
+    branches: [ "main" ]
 
 jobs:
   terraform-validate-plan:
