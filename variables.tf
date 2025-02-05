@@ -18,6 +18,12 @@ variable "projectName" {
   default = "fastfood-api"
 }
 
+variable "mongodb_uri" {
+  description = "URI para acesso do banco de dados mongoDB payment-service"
+  type        = string
+  sensitive   = true
+}
+
 variable "postgres_user" {
   description = "Usuário do banco de dados"
   type        = string
