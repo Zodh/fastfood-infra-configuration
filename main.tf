@@ -4,9 +4,10 @@ resource "kubernetes_secret" "fastfood_secret" {
   }
 
   data = {
-    POSTGRES_USER          = base64encode(var.postgres_user)
-    POSTGRES_PASSWORD      = base64encode(var.postgres_password)
-    FASTFOOD_MAIL_PASSWORD = base64encode(var.fastfood_mail_password)
+    MONGO_DB_URI            = base64encode(var.mongodb_uri)
+    POSTGRES_USER           = base64encode(var.postgres_user)
+    POSTGRES_PASSWORD       = base64encode(var.postgres_password)
+    FASTFOOD_MAIL_PASSWORD  = base64encode(var.fastfood_mail_password)
   }
 
   type = "Opaque"
